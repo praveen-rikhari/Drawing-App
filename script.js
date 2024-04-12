@@ -12,3 +12,13 @@ const canvasOffsetY = canvas.offsetTop;
 // specifying exact width and height of the canvas
 canvas.width = window.innerWidth - canvasOffsetX
 canvas.height = window.innerHeight - canvasOffsetY
+
+// Global variables
+let isPainting = false;
+let lineWidth = 5;      // default line or stroke width
+
+// These will hold the X and Y coordiates
+// from where we started to draw
+let StartX;
+let StartY;
+
