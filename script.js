@@ -1,4 +1,4 @@
-const canvas = documnet.getElemnetById('drawing-board');
+const canvas = document.getElementById('drawing-board');
 const toolbar = document.getElementById('toolbar');
 
 //creating canvas context
@@ -43,6 +43,26 @@ toolbar.addEventListener('change', e => {
     }
 });
 
+// funtion to handle realtime drawing
+const draw = (e) => {
+    if (!isPainting) {
+        return;
+    }
+
+    // setting context line Width to original lineWidth
+    ctx.lineWidth = lineWidth;
+
+    // for creating a pen line effect 
+    ctx.lineCap = 'round';
+
+    // to remove the default toolbar width between
+    // cursor and the drawing
+    ctx.lineTo(e.clientX - canvasOffsetX, e.clientY);
+
+    // to draw at real time
+    ctx.stroke();
+}
+
 // logic for drawing
 // this event occurs when we start the drawing
 canvas.addEventListener('mousedown', (e) => {
@@ -52,6 +72,7 @@ canvas.addEventListener('mousedown', (e) => {
     // we started the drawing
     StartX = e.clientX;
     StartY = e.clientY;
+    console.log("hello")
 })
 
 // this event occurs when we finish the drawing
@@ -64,4 +85,7 @@ canvas.addEventListener('mouseup', (e) => {
     // to discontinue the previous drawn line to the
     // new line drawn beginPath() method is called
     ctx.beginPath();
+    console.log("world")
 })
+
+canvas.addEventListener('mousemove', draw);
