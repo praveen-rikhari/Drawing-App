@@ -22,3 +22,9 @@ let lineWidth = 5;      // default line or stroke width
 let StartX;
 let StartY;
 
+// logic to clear the canvas
+toolbar.addEventListener('click', e => {
+    if (e.target.id === 'clear') {
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+    }
+})
