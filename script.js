@@ -27,4 +27,18 @@ toolbar.addEventListener('click', e => {
     if (e.target.id === 'clear') {
         ctx.clearRect(0, 0, canvas.width, canvas.height)
     }
-})
+});
+
+// logic to handle stroke color and width
+toolbar.addEventListener('change', e => {
+
+    // for stroke color
+    if (e.target.id === 'stroke') {
+        ctx.strokeStyle = e.target.value;
+    }
+
+    // for stroke width 
+    if (e.target.id == 'lineWidth') {
+        lineWidth = e.target.value;
+    }
+});
