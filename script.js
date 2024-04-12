@@ -42,3 +42,26 @@ toolbar.addEventListener('change', e => {
         lineWidth = e.target.value;
     }
 });
+
+// logic for drawing
+// this event occurs when we start the drawing
+canvas.addEventListener('mousedown', (e) => {
+    isPainting = true;
+
+    // saving the X & Y coordinates from where
+    // we started the drawing
+    StartX = e.clientX;
+    StartY = e.clientY;
+})
+
+// this event occurs when we finish the drawing
+canvas.addEventListener('mouseup', (e) => {
+    isPainting = false;
+
+    // to color our line need to call stroke() method
+    ctx.stroke();
+
+    // to discontinue the previous drawn line to the
+    // new line drawn beginPath() method is called
+    ctx.beginPath();
+})
