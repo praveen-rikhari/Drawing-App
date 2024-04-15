@@ -39,3 +39,14 @@ Ensure you have a modern web browser installed, such as Google Chrome, Firefox, 
 - **To change the color**: Click on the color palette and select your desired color.
 - **To change the stroke width**: Use the slider to adjust the width.
 - **To clear the canvas**: Click the 'Clear' button.
+
+
+## Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
